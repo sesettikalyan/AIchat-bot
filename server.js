@@ -16,7 +16,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors()); // Enable CORS
+app.use(
+  cors({
+    origin: "https://a-ichat-bot.vercel.app/",
+  })
+); // Enable CORS
 app.use(express.json()); // Parse JSON bodies
 
 // Serve static files from the 'public' directory
