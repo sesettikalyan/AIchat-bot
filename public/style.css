@@ -1,16 +1,28 @@
 /* General Variables */
 :root {
   --font-family: 'Arial', sans-serif;
-  --background-color: #f4f4f9;
-  --text-color: #333;
+  --background-color: #f4f4f9; /* Light Mode Background */
+  --text-color: #333; /* Light Mode Text Color */
   --highlight-color: #4CAF50; /* Green */
-  --chatbox-border-color: #ddd;
-  --chatbox-background-color: #f9f9f9;
-  --user-message-color: #007bff; /* Blue */
-  --bot-message-color: #dc3545; /* Red */
-  --footer-text-color: #666;
+  --chatbox-border-color: #ddd; /* Light Border Color */
+  --chatbox-background-color: #f9f9f9; /* Light Chatbox Background */
+  --user-message-color: #007bff; /* Blue for User Messages */
+  --bot-message-color: #dc3545; /* Red for Bot Messages */
+  --footer-text-color: #666; /* Footer Text Color */
   --border-radius: 5px;
   --transition-duration: 0.3s;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --background-color: #1e1e1e; /* Dark Mode Background */
+  --text-color: #e4e4e4; /* Dark Mode Text Color */
+  --highlight-color: #4CAF50; /* Keep Highlight Color */
+  --chatbox-border-color: #666; /* Dark Border Color */
+  --chatbox-background-color: #444; /* Dark Chatbox Background */
+  --user-message-color: #99ccff; /* Lighter Blue for User Messages */
+  --bot-message-color: #ff9999; /* Lighter Red for Bot Messages */
+  --footer-text-color: #bbb; /* Dark Mode Footer Text Color */
 }
 
 /* General Reset */
@@ -33,7 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background: #ffffff;
+  background: var(--background-color); /* Change to use variable */
 }
 
 .logo {
@@ -59,6 +71,7 @@ body {
 .input-container {
   display: flex;
   justify-content: space-between;
+  background-color: var(--background-color); /* Change to use variable */
 }
 
 #input {
@@ -67,6 +80,8 @@ body {
   border: 1px solid var(--chatbox-border-color);
   border-radius: var(--border-radius);
   font-size: 1rem;
+  background-color: var(--background-color); /* Change to use variable */
+  color: var(--text-color); /* Change to use variable */
 }
 
 .send-button {
@@ -103,4 +118,14 @@ body {
 .bot-message {
   color: var(--bot-message-color);
   margin: 10px 0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: inherit;
 }
