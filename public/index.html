@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ai ChatBot</title>
+    <title>AI ChatBot</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1 class="logo">Ai<span style="color: green">Chatbot</span></h1>
-    <div id="chatbot"></div>
-    <div id="input-container">
-      <input
-        type="text"
-        id="input"
-        placeholder="Type your message..."
-        title="Type your message" />
-      <button onclick="sendMessage()" title="Send">></button>
-    </div>
-
-    <div class="bottompageSection">
-      <p class="bottompageDisclaimer">
-        AiChatbot may not always provide accurate information, please fact
-        check.
-      </p>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
+</head>
+<body>
+  <div class="container">
+      <h1 class="logo">AI<span class="highlight">Chatbot</span></h1>
+      <button id="theme-toggle" class="theme-toggle" title="Toggle Dark Mode">🌙</button>
+      <div id="chatbot" class="chatbox"></div>
+      <div id="input-container" class="input-container">
+          <input
+              type="text"
+              id="input"
+              placeholder="Type your message..."
+              title="Type your message" />
+          <button onclick="sendMessage()" title="Send" class="send-button">Send</button>
+      </div>
+      <footer class="footer">
+          <p class="disclaimer">
+              AI Chatbot may not always provide accurate information, please fact check.
+          </p>
+      </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>

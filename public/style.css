@@ -1,74 +1,131 @@
+/* General Variables */
+:root {
+  --font-family: 'Arial', sans-serif;
+  --background-color: #f4f4f9; /* Light Mode Background */
+  --text-color: #333; /* Light Mode Text Color */
+  --highlight-color: #4CAF50; /* Green */
+  --chatbox-border-color: #ddd; /* Light Border Color */
+  --chatbox-background-color: #f9f9f9; /* Light Chatbox Background */
+  --user-message-color: #007bff; /* Blue for User Messages */
+  --bot-message-color: #dc3545; /* Red for Bot Messages */
+  --footer-text-color: #666; /* Footer Text Color */
+  --border-radius: 5px;
+  --transition-duration: 0.3s;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --background-color: #1e1e1e; /* Dark Mode Background */
+  --text-color: #e4e4e4; /* Dark Mode Text Color */
+  --highlight-color: #4CAF50; /* Keep Highlight Color */
+  --chatbox-border-color: #666; /* Dark Border Color */
+  --chatbox-background-color: #444; /* Dark Chatbox Background */
+  --user-message-color: #99ccff; /* Lighter Blue for User Messages */
+  --bot-message-color: #ff9999; /* Lighter Red for Bot Messages */
+  --footer-text-color: #bbb; /* Dark Mode Footer Text Color */
+}
+
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: Grey;
-  font-family: Verdana;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 100%; /* Use all available width */
+  height: 100vh; /* Use full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--background-color); /* Change to use variable */
 }
 
 .logo {
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-#chatbot {
-  background-color: DarkGrey;
-  width: auto;
-  height: 500px;
-  border: 1px solid black;
-  border-radius: 10px;
-  overflow-y: scroll;
-  padding: 10px;
+.highlight {
+  color: var(--highlight-color);
 }
 
-.user-message {
-  background-color: Grey;
-  border-radius: 10px;
-  color: Black;
-  font-weight: bold;
-  padding: 10px;
-}
-
-.bot-message {
-  background-color: Grey;
-  border-radius: 10px;
-  color: White;
-  font-weight: bold;
-  padding: 10px;
-  max-height: auto;
-  /* Adjust the value based on your design */
+.chatbox {
+  border: 1px solid var(--chatbox-border-color);
+  border-radius: var(--border-radius);
+  flex: 1; /* Allow the chatbox to take all available space */
   overflow-y: auto;
-  /* or overflow-y: scroll; */
+  padding: 15px;
+  background-color: var(--chatbox-background-color);
+  margin-bottom: 15px;
 }
 
-#input-container {
+.input-container {
   display: flex;
-  flex-direction: horizontal;
-  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color); /* Change to use variable */
 }
 
 #input {
-  background-color: DarkGrey;
-  border-radius: 10px;
-  color: Black;
-  width: 50%;
-  height: 25px;
-  margin: 5px;
-  margin-left: auto;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--chatbox-border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background-color: var(--background-color); /* Change to use variable */
+  color: var(--text-color); /* Change to use variable */
 }
 
-button {
-  background-color: Green;
-  border-radius: 10px;
-  color: White;
-  margin: 5px;
-  margin-right: auto;
-  width: 30px;
-  height: 30px;
+.send-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--highlight-color);
+  color: white;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
   cursor: pointer;
+  transition: background-color var(--transition-duration);
 }
 
-.bottompageSection {
+.send-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.footer {
   text-align: center;
+  margin-top: 20px;
 }
 
-.bottompageDisclaimer {
-  color: White;
-  font-size: 12px;
+.disclaimer {
+  font-size: 0.9rem;
+  color: var(--footer-text-color);
+}
+
+/* Message Styles */
+.user-message {
+  color: var(--user-message-color);
+  margin: 10px 0;
+}
+
+.bot-message {
+  color: var(--bot-message-color);
+  margin: 10px 0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: inherit;
 }

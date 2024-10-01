@@ -89,3 +89,17 @@ input.addEventListener("keypress", function (event) {
     sendMessage();
   }
 });
+
+// Toggle dark mode
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  // Update the button icon
+  if (document.body.classList.contains("dark-mode")) {
+    themeToggle.textContent = "☀️"; // Sun icon
+  } else {
+    themeToggle.textContent = "🌙"; // Moon icon
+  }
+});
