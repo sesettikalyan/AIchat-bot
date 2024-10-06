@@ -20,7 +20,7 @@ body.dark-mode {
   --highlight-color: #4CAF50; /* Keep Highlight Color */
   --chatbox-border-color: #666; /* Dark Border Color */
   --chatbox-background-color: #444; /* Dark Chatbox Background */
-  --user-message-color: #99ccff; /* Lighter Blue for User Messages */
+  --user-message-color: #7ebbf9; /* Lighter Blue for User Messages */
   --bot-message-color: #ff9999; /* Lighter Red for Bot Messages */
   --footer-text-color: #bbb; /* Dark Mode Footer Text Color */
 }
