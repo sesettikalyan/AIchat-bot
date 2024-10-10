@@ -14,7 +14,7 @@ async function sendMessage() {
   if (message === "") return;
 
   // Display user message
-  displayMessage("You: " + message, "user-message");
+  displayMessage("You: " + message, "bg-[#0000007d] text-white px-5 py-2 rounded-xl mt-2 w-fit text-lg");
 
   conversationHistory.push({
     role: "user",
@@ -27,7 +27,7 @@ async function sendMessage() {
   // Display loading message
   const loadingMessage = displayMessage(
     "AiChatbot is typing...",
-    "bot-message"
+    "bg-black text-white px-5 py-2 rounded-lg mt-2 w-fit"
   );
   loadingMessage.id = "loading";
 
@@ -54,7 +54,7 @@ async function sendMessage() {
     }
 
     // Display bot response
-    displayMessage("AiChatbot: " + data.response, "bot-message");
+    displayMessage("AiChatbot: " + data.response, "bg-black text-white px-5 py-2 rounded-lg mt-2 w-fit");
 
     conversationHistory.push({
       role: "assistant",
@@ -70,7 +70,7 @@ async function sendMessage() {
 
     displayMessage(
       "AiChatbot: Sorry, something went wrong. Please try again later.",
-      "bot-message"
+      "bg-black text-white px-5 py-2 rounded-lg mt-2 w-fit"
     );
   }
 }
